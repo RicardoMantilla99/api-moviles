@@ -1,0 +1,17 @@
+
+[
+    {     
+    "id": 1, 
+    "nombre": "stalin", 
+    "correo_electronico": "sasangurimae@urn.edu.ec" , 
+    "telefono":"0975463478" 
+   
+    },
+    {
+        "id": 2, 
+    "nombre": "juan", 
+    "correo_electronico": "juan@gmail.com" , 
+    "telefono":"0987532145" 
+    }
+]
+ 

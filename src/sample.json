@@ -1,0 +1,18 @@
+
+[
+    {     
+    "id": 1, 
+    "nombre_producto": "pera", 
+    "precio": 1.5 , 
+    "descripcion":"frescas" 
+   
+    },
+    {
+        "id": 2, 
+        "nombre_producto": "Manzana", 
+        "precio": 3.5, 
+        "descripcion":"manzanas verdes" 
+       
+    }
+]
+ 
