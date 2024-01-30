@@ -29,12 +29,17 @@ router.post('/', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     const { id } = req.params;
-    _.each(productos, (producto, i) => {
-        if (producto.id == id) {
-            producto.splice(i, 1);
-        }
-    })
-    res.send(productos);
+
+    // Encuentra el índice del producto con el ID dado
+    const index = productos.findIndex(producto => producto.id == id);
+
+    if (index !== -1) {
+        // Elimina el producto del array
+        productos.splice(index, 1);
+        res.send(productos);
+    } else {
+        res.status(404).json({ error: 'Producto no encontrado' });
+    }
 });
 
 

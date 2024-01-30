@@ -29,12 +29,17 @@ router.post('/', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     const { id } = req.params;
-    _.each(clientes, (cliente, i) => {
-        if (cliente.id == id) {
-            cliente.splice(i, 1);
-        }
-    })
-    res.send(clientes);
+
+    // Encuentra el índice del cliente con el ID dado
+    const index = clientes.findIndex(cliente => cliente.id == id);
+
+    if (index !== -1) {
+        // Elimina el cliente del array
+        clientes.splice(index, 1);
+        res.send(clientes);
+    } else {
+        res.status(404).json({ error: 'Cliente no encontrado' });
+    }
 });
 
 
