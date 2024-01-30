@@ -63,9 +63,27 @@ module.exports = router;
 
 
 
-
+/*
 app.get('/routes/clientes/:id', (req, res) => {
     const cliente = clientes.find(c => c.id === parseInt(req.params.id));
     if (!cliente) return res.status(404).send('Cliente no encontrado');
     else res.send(cliente)
+});
+
+router.get('/:id', (req, res) => {
+    const { id } = req.params;
+    const cliente = clientes.find(cliente => cliente.id == id);
+*/
+
+
+
+router.get('/:id', (req, res) => {
+    const { id } = req.params;
+    const cliente = clientes.find(cliente => cliente.id == id);
+
+    if (cliente) {
+        res.json(cliente);
+    } else {
+        res.status(404).json({ error: 'Producto no encontrado' });
+    }
 });
